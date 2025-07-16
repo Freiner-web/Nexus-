@@ -68,7 +68,16 @@ app.post('/api/upload/youtube', async (req, res) => {
     res.status(500).send('Upload failed');
   }
 });
-
+// Homepage route
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>👋 Welcome to Nexus Backend</h1>
+    <p>This server is running and ready to upload videos to YouTube!</p>
+    <ul>
+      <li><a href="/auth/google">Connect YouTube</a></li>
+    </ul>
+  `);
+});
 app.listen(3000, () => {
   console.log('✅ Nexus running');
 });
